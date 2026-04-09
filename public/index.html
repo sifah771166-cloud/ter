@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lab Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Lab Management System</h1>
+  <p>Monitoring Kunjungan dan Peminjaman</p>
+</header>
+
+<nav>
+  <button onclick="showPage('dashboard')">Dashboard</button>
+  <button onclick="showPage('kunjungan')">Kunjungan</button>
+  <button onclick="showPage('peminjaman')">Peminjaman</button>
+</nav>
+
+<main>
+
+<section id="dashboard" class="page active">
+  <div class="card">
+    <h2>Statistik</h2>
+    <p>Total Kunjungan: <span id="totalK">0</span></p>
+    <p>Total Peminjaman: <span id="totalP">0</span></p>
+  </div>
+</section>
+
+<section id="kunjungan" class="page">
+  <div class="card">
+    <h2>Data Kunjungan</h2>
+
+    <div class="form">
+      <input id="namaK" placeholder="Nama">
+      <input id="kelasK" placeholder="Kelas">
+      <input id="tanggalK" type="date">
+      <button onclick="tambahKunjungan()">Tambah</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nama</th>
+          <th>Kelas</th>
+          <th>Tanggal</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody id="tableKunjungan"></tbody>
+    </table>
+  </div>
+</section>
+
+<section id="peminjaman" class="page">
+  <div class="card">
+    <h2>Data Peminjaman</h2>
+
+    <div class="form">
+      <input id="namaP" placeholder="Nama">
+      <select id="barangP">
+        <option value="">Pilih Barang</option>
+      </select>
+      <input id="jumlahP" placeholder="Jumlah" type="number">
+      <input id="tanggalP" type="date">
+      <button onclick="tambahPeminjaman()">Tambah</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nama</th>
+          <th>Barang</th>
+          <th>Tanggal</th>
+          <th>Jumlah</th>
+          <th>Status</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody id="tablePeminjaman"></tbody>
+    </table>
+  </div>
+</section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
